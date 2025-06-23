@@ -1,4 +1,4 @@
-import { motion as MotionPath } from "motion/react";
+import { motion as MotionPath } from "framer-motion";
 
 export default function SvgCamera() {
   return (

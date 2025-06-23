@@ -1,4 +1,4 @@
-import { motion as Motion } from "motion/react";
+import { motion as Motion } from "framer-motion";
 export default function PagesAnimations({children}) {
   const Animate = (variants) => {
     return {

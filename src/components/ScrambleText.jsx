@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion as Motion } from "motion/react";
+import { motion as Motion } from "framer-motion";
 
 const chars = "!@#$%^&*()_+-=[]{}<>?ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 

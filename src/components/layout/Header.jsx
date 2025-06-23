@@ -13,6 +13,17 @@ export default function Header() {
     () => {
       const tl = gsap.timeline();
 
+    //   tl.fromTo(
+    //     containerRef.current,
+    //     { y: -100, opacity: 0 },
+    //     {
+    //       y: 0,
+    //       opacity: 1,
+    //       duration: 0.5,
+    //       delay: 0.5,
+    //       ease: "power1.out",
+    //     }
+    //   );
       tl.from(".name", {
         xPercent: -100,
         opacity: 0,
@@ -39,7 +50,10 @@ export default function Header() {
   );
 
   return (
-    <div ref={containerRef}>
+    <div
+      ref={containerRef}
+      className="backdrop-blur-[2px]"
+    >
       <header className="flex justify-between px-8 py-8 lg:px-20">
         <div className="name text-black font-semibold text-lg lg:text-2xl py-8 tracking-wider uppercase">
           Darius Žvinklys
@@ -50,7 +64,10 @@ export default function Header() {
             { label: "Work", to: "/work" },
             { label: "Contact", to: "/contact" },
           ].map(({ label, to }) => (
-            <li key={label} className="nav-item min-w-[80px] uppercase font-semibold text-xs lg:text-sm">
+            <li
+              key={label}
+              className="nav-item min-w-[80px] uppercase font-semibold text-xs lg:text-sm"
+            >
               <Link to={to}>
                 <AnimatedLinkText text={label} />
               </Link>

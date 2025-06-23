@@ -6,42 +6,46 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
-import { AnimatePresence } from "motion/react";
+import { AnimatePresence } from "framer-motion";
 import Header from "./components/layout/Header";
 import Home from "./pages/Home";
 import Work from "./pages/Work";
 import Contact from "./pages/Contact";
 import Loader from "./components/Loader1";
-// import Test from './components/Test'
-// import Test1 from './components/Test1'
-// import Links from './components/Test2'
+import BlurryCursor from "./components/utils/BlurryCursor";
 
 function AnimatedPages() {
   const [isLoaded, setIsLoaded] = useState(false);
   const location = useLocation();
 
   return (
-    <AnimatePresence mode="wait">
-      {!isLoaded && <Loader onComplete={() => setIsLoaded(true)} />}
+    <>
+      {!isLoaded && (
+        <AnimatePresence>
+          <Loader onComplete={() => setIsLoaded(true)} />
+        </AnimatePresence>
+      )}
       {isLoaded && (
         <>
-        <Header />
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Home />} />
-          <Route path="/work" element={<Work />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+          <Header />
+          <AnimatePresence mode="wait">
+            <Routes location={location} key={location.pathname}>
+              <Route path="/" element={<Home />} />
+              <Route path="/work" element={<Work />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </AnimatePresence>
         </>
       )}
-    </AnimatePresence>
+    </>
   );
 }
+
 export default function App() {
   return (
-    <>
-      <Router>
-        <AnimatedPages />
-      </Router>
-    </>
+    <Router>
+      <AnimatedPages />
+      <BlurryCursor />
+    </Router>
   );
 }

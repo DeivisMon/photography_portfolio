@@ -1,4 +1,4 @@
-import { motion as TextMotion } from "motion/react";
+import { motion as TextMotion } from "framer-motion";
 
 const DURATION = 0.15;
 const STAGGER = 0.025;

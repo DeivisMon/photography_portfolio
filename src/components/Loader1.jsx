@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import SvgCamera from "./SvgCamera";
-// import ScrambleText from "./ScrambleText";
+import ScrambleText from "./ScrambleText";
 // import AnimatedLinkText from "../Test2";
 
 gsap.registerPlugin(useGSAP);
@@ -142,13 +142,6 @@ export default function Loader({ onComplete }) {
         },
         "<+=0.4"
       );
-
-      tl.from(".name", {
-        xPercent: -100,
-        opacity: 0,
-        duration: 0.6,
-        ease: "back.out(1)",
-      });
     },
     { scope: containerRef }
   );
@@ -158,14 +151,9 @@ export default function Loader({ onComplete }) {
       ref={containerRef}
       className="relative h-screen overflow-hidden leading-relaxed"
     >
-      <div className="slider-5 absolute w-full h-screen bg-white overflow-hidden">
-        
-      </div>
-
       <div className="slider-4 absolute w-full h-screen bg-gray-900"></div>
       <div className="slider-3 absolute w-full h-screen bg-gray-850"></div>
       <div className="slider-2 absolute w-full h-screen bg-gray-900"></div>
-
       <div className="slider-1 absolute w-full h-screen bg-black">
         <div className="slider-heading flex flex-col items-center justify-end absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <div className="backdrop-blur-[1px]">
