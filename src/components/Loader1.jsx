@@ -2,11 +2,12 @@ import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import SvgCamera from "./SvgCamera";
-import ScrambleText from "./ScrambleText";
+// import ScrambleText from "./ScrambleText";
+// import AnimatedLinkText from "../Test2";
 
 gsap.registerPlugin(useGSAP);
 
-export default function Loader() {
+export default function Loader({ onComplete }) {
   const containerRef = useRef(null);
   const slidingTextLeftRef = useRef(null);
   const slidingTextRightRef = useRef(null);
@@ -14,7 +15,11 @@ export default function Loader() {
 
   useGSAP(
     () => {
-      let tl = gsap.timeline();
+      const tl = gsap.timeline({
+        onComplete: () => {
+          onComplete?.();
+        },
+      });
 
       tl.from(slidingTextLeftRef.current, {
         opacity: 0,
@@ -144,21 +149,6 @@ export default function Loader() {
         duration: 0.6,
         ease: "back.out(1)",
       });
-
-      tl.from(
-        ".nav-item",
-        {
-          xPercent: 100,
-          opacity: 0,
-          duration: 0.6,
-          ease: "back.out(1)",
-          stagger: {
-            amount: 0.2,
-            from: "left",
-          },
-        },
-        "<"
-      );
     },
     { scope: containerRef }
   );
@@ -169,22 +159,7 @@ export default function Loader() {
       className="relative h-screen overflow-hidden leading-relaxed"
     >
       <div className="slider-5 absolute w-full h-screen bg-white overflow-hidden">
-        {/* Header */}
-        <header className="flex justify-between px-8 py-8 lg:px-20">
-          <div className="name text-black font-semibold text-lg lg:text-2xl py-8 tracking-wider uppercase">
-            Darius Žvinklys
-          </div>
-          <ul className="flex space-x-6">
-            {["Home", "Work", "Contact"].map((text) => (
-              <li
-                key={text}
-                className="nav-item min-w-[80px] uppercase font-semibold text-xs lg:text-sm"
-              >
-                <ScrambleText text={text} />
-              </li>
-            ))}
-          </ul>
-        </header>
+        
       </div>
 
       <div className="slider-4 absolute w-full h-screen bg-gray-900"></div>

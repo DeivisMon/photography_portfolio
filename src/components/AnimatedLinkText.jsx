@@ -1,0 +1,56 @@
+import { motion as TextMotion } from "motion/react";
+
+const DURATION = 0.15;
+const STAGGER = 0.025;
+
+export default function AnimatedLinkText({ text }) {
+  return (
+    <TextMotion.span
+      initial="initial"
+      whileHover="hovered"
+      className="relative inline-block cursor-pointer overflow-hidden"
+    >
+      {/* top letters (default state) */}
+      <span className="block">
+        {text.split("").map((letter, index) => (
+          <TextMotion.span
+            key={`top-${index}`}
+            variants={{
+              initial: { y: 0 },
+              hovered: { y: "-100%" },
+            }}
+            transition={{
+              duration: DURATION,
+              ease: "easeInOut",
+              delay: STAGGER * index,
+            }}
+            className="inline-block"
+          >
+            {letter}
+          </TextMotion.span>
+        ))}
+      </span>
+
+      {/* bottom letters (hover state) */}
+      <span className="absolute inset-0 block">
+        {text.split("").map((letter, index) => (
+          <TextMotion.span
+            key={`bottom-${index}`}
+            variants={{
+              initial: { y: "100%" },
+              hovered: { y: 0 },
+            }}
+            transition={{
+              duration: DURATION,
+              ease: "easeInOut",
+              delay: STAGGER * index,
+            }}
+            className="inline-block"
+          >
+            {letter}
+          </TextMotion.span>
+        ))}
+      </span>
+    </TextMotion.span>
+  );
+}
