@@ -1,8 +1,8 @@
 import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import SvgCamera from "./SvgCamera";
-import ScrambleText from "./ScrambleText";
+import SvgCamera from "../utils/SvgCamera";
+import ScrambleText from "../utils/ScrambleText";
 // import AnimatedLinkText from "../Test2";
 
 gsap.registerPlugin(useGSAP);

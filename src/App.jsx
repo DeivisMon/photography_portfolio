@@ -7,11 +7,11 @@ import {
   useLocation,
 } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import Loader from "./components/layout/Loader";
 import Header from "./components/layout/Header";
 import Home from "./pages/Home";
 import Work from "./pages/Work";
 import Contact from "./pages/Contact";
-import Loader from "./components/Loader1";
 import BlurryCursor from "./components/utils/BlurryCursor";
 
 function AnimatedPages() {
