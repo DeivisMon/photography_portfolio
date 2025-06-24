@@ -35,10 +35,11 @@ export default function BlurryCursor() {
       borderRadius: "50%",
       // x: bounds.left,
       // y: bounds.top,
-      backgroundColor: "white",
-      borderBottom: "4px solid rgb(255, 255, 255)",
+      // backgroundColor: "rgba(255, 255, 255, 0.1)",
+      border: "2px solid rgb(255, 255, 255)",
+      backdropFilter: "blur(1px)",  
       filter: "blur(0)",
-      ease: "expo.out",
+      ease: "bounce.in",
       duration: 0.3,
     });
   };
@@ -49,10 +50,13 @@ export default function BlurryCursor() {
     hoverTween = gsap.to(cursor, {
       width: defaultSize,
       height: defaultSize,
-      borderRadius: "999px",
-      backgroundColor: "rgb(255, 255, 255)",
-      border: "2px solid transparent",
-      ease: "expo.out",
+      // backgroundColor: "transparent",
+      borderRadius: "50%",
+      filter: "blur(1px)",
+      backdropFilter: "blur(0)",
+      boxShadow: "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
+      border: "1px solid rgb(255, 255, 255)",
+      ease: "bounce.in",
       duration: 0.15,
     });
   };
@@ -62,7 +66,7 @@ export default function BlurryCursor() {
   window.addEventListener("mouseover", show);
 
   const bindNavItems = () => {
-    const navItems = document.querySelectorAll(".nav-list");
+    const navItems = document.querySelectorAll(".nav-list, .social-icons");
     if (navItems.length === 0) {
       requestAnimationFrame(bindNavItems);
       return;
@@ -81,7 +85,7 @@ export default function BlurryCursor() {
     window.removeEventListener("mouseout", hide);
     window.removeEventListener("mouseover", show);
 
-    document.querySelectorAll(".nav-list").forEach((el) => {
+    document.querySelectorAll(".nav-list, .social-icons").forEach((el) => {
       el.removeEventListener("mouseenter", handleHover);
       el.removeEventListener("mouseleave", handleLeave);
     });
@@ -94,13 +98,13 @@ export default function BlurryCursor() {
   return (
     <div
       ref={cursorRef}
-      className="pointer-events-none blur-[2px] shadow-lg fixed top-0 left-0 z-[1000]"
+      className="pointer-events-none blur-[1px] shadow-2xl fixed top-0 left-0 z-[1000]"
       style={{
         width: defaultSize,
         height: defaultSize,
         borderRadius: "999px",
-        backgroundColor: "rgb(255, 255, 255)",
-        border: "2px solid transparent",
+        backgroundColor: "rgba(255, 255, 255, 0)",
+        border: "1px solid white",
         mixBlendMode: "difference", 
         willChange: "transform, width, height, border-radius, background-color",
       }}

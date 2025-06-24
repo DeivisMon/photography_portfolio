@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Link } from "react-router-dom";
 import AnimatedLinkText from "../ui/AnimatedLinkText";
+import SocialIcons from "../ui/SocialIcons";
 
 gsap.registerPlugin(useGSAP);
 
@@ -21,10 +22,22 @@ export default function Header() {
       });
 
       tl.from(
+        ".nav-list",
+        {
+          yPercent: 100,
+          opacity: 0,
+          duration: 0.6,
+          ease: "back.out(1)",
+        },
+        "<"
+      );
+
+      tl.from(
         ".nav-item",
         {
-          xPercent: 100,
+          xPercent: -100,
           opacity: 0,
+          delay: 0.2,
           duration: 0.6,
           ease: "back.out(1)",
           stagger: {
@@ -32,7 +45,7 @@ export default function Header() {
             from: "left",
           },
         },
-        "<"
+        "<+=0.5"
       );
     },
     { scope: containerRef }
@@ -41,10 +54,10 @@ export default function Header() {
   return (
     <div ref={containerRef} className="backdrop-blur-[2px] bg-white">
       <header className="flex justify-between px-8 py-8 lg:px-20">
-        <div className="name text-black font-semibold text-lg lg:text-2xl py-8 tracking-wider uppercase pointer-events-none">
+        <div className="name flex-1 text-black font-semibold text-lg lg:text-2xl py-8 tracking-wider uppercase pointer-events-none">
           Darius Žvinklys
         </div>
-        <ul className="nav-list flex space-x-6"
+        <ul className="nav-list flex justify-center flex-1 space-x-6"
             data-cursor-target
         >
           {[
@@ -62,6 +75,9 @@ export default function Header() {
             </li>
           ))}
         </ul>
+        <div className="flex justify-end flex-1">
+          <SocialIcons /> 
+        </div>
       </header>
     </div>
   );

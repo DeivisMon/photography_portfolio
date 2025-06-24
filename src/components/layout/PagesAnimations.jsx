@@ -14,7 +14,7 @@ export default function PagesAnimations({children}) {
     animate: { opacity: 1, transition: { duration: 1 } },
     exit: {
       top: "60px",
-      opacity: 0.5,
+      opacity: 0.8,
       transition: { duration: 1, ease: [0.83, 0, 0.17, 1] },
     },
   };
@@ -35,13 +35,13 @@ export default function PagesAnimations({children}) {
       top: "60px",
       y: -100,
       scale: 0.9,
-      opacity: 0.5,
+      opacity: 0.8,
       transition: { duration: 1, ease: [0.83, 0.2, 0.17, 1] },
     },
   };
 
   return (
-    <div className="bg-gray-900 ">
+    <div className="bg-black">
       <Motion.div
         {...Animate(slide)}
         className="fixed top-0 left-0 bg-white min-w-full min-h-full">
