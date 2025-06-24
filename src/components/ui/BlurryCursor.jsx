@@ -9,17 +9,17 @@ export default function BlurryCursor() {
   const circle = circleRef.current;
 
   const xTo = gsap.quickTo(circle, "x", {
-    duration: 0.3,
+    duration: 0.25,
     ease: "sine.out",
   });
   const yTo = gsap.quickTo(circle, "y", {
-    duration: 0.3,
+    duration: 0.25,
     ease: "sine.out",
   });
 
   const moveCircle = (e) => {
-    xTo(e.clientX - 10);
-    yTo(e.clientY - 10);
+    xTo(e.clientX - 15);
+    yTo(e.clientY - 0);
   };
 
   const hideCursor = (e) => {

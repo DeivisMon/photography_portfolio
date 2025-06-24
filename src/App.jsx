@@ -12,7 +12,7 @@ import Header from "./components/layout/Header";
 import Home from "./pages/Home";
 import Work from "./pages/Work";
 import Contact from "./pages/Contact";
-import BlurryCursor from "./components/utils/BlurryCursor";
+import BlurryCursor from "./components/ui/BlurryCursor";
 
 function AnimatedPages() {
   const [isLoaded, setIsLoaded] = useState(false);

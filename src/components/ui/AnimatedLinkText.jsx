@@ -1,23 +1,23 @@
 import { motion as TextMotion } from "framer-motion";
 
-const DURATION = 0.15;
+const DURATION = 0.18;
 const STAGGER = 0.025;
 
 export default function AnimatedLinkText({ text }) {
   return (
     <TextMotion.span
       initial="initial"
-      whileHover="hovered"
+      whileHover="hover"
       className="relative inline-block cursor-pointer overflow-hidden"
     >
-      {/* top letters (default state) */}
+      {/* top letters */}
       <span className="block">
         {text.split("").map((letter, index) => (
           <TextMotion.span
             key={`top-${index}`}
             variants={{
               initial: { y: 0 },
-              hovered: { y: "-100%" },
+              hover: { y: "-100%" },
             }}
             transition={{
               duration: DURATION,
@@ -31,14 +31,14 @@ export default function AnimatedLinkText({ text }) {
         ))}
       </span>
 
-      {/* bottom letters (hover state) */}
+      {/* bottom letters on hover  */}
       <span className="absolute inset-0 block">
         {text.split("").map((letter, index) => (
           <TextMotion.span
             key={`bottom-${index}`}
             variants={{
               initial: { y: "100%" },
-              hovered: { y: 0 },
+              hover: { y: 0 },
             }}
             transition={{
               duration: DURATION,

@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Link } from "react-router-dom";
-import AnimatedLinkText from "../utils/AnimatedLinkText";
+import AnimatedLinkText from "../ui/AnimatedLinkText";
 
 gsap.registerPlugin(useGSAP);
 
@@ -13,17 +13,6 @@ export default function Header() {
     () => {
       const tl = gsap.timeline();
 
-    //   tl.fromTo(
-    //     containerRef.current,
-    //     { y: -100, opacity: 0 },
-    //     {
-    //       y: 0,
-    //       opacity: 1,
-    //       duration: 0.5,
-    //       delay: 0.5,
-    //       ease: "power1.out",
-    //     }
-    //   );
       tl.from(".name", {
         xPercent: -100,
         opacity: 0,
