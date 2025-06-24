@@ -52,14 +52,13 @@ header ul li {
   height: 100vh;
 }
 
-
-.imsrk {
-  color: white;
-  font-size: 52px;
-  font-weight: 900;
-  display: inline-block;
-  /* font-family: "Roboto", sans-serif; */
-}
+/* .nav-item {
+  min-width: 80px;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+} */
 
 .slider-heading h1, .slider-heading span {
   /* font-family: "Montserrat", sans-serif; */
@@ -69,7 +68,7 @@ header ul li {
 @media (min-width: 1024px) {
 
   header {
-    padding: 20px 50px;
+    padding: 10px 50px;
   }
 
 

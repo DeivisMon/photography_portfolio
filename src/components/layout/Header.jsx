@@ -39,15 +39,14 @@ export default function Header() {
   );
 
   return (
-    <div
-      ref={containerRef}
-      className="backdrop-blur-[2px]"
-    >
+    <div ref={containerRef} className="backdrop-blur-[2px] bg-white">
       <header className="flex justify-between px-8 py-8 lg:px-20">
-        <div className="name text-black font-semibold text-lg lg:text-2xl py-8 tracking-wider uppercase">
+        <div className="name text-black font-semibold text-lg lg:text-2xl py-8 tracking-wider uppercase pointer-events-none">
           Darius Žvinklys
         </div>
-        <ul className="flex space-x-6">
+        <ul className="nav-list flex space-x-6"
+            data-cursor-target
+        >
           {[
             { label: "Home", to: "/" },
             { label: "Work", to: "/work" },
@@ -55,7 +54,7 @@ export default function Header() {
           ].map(({ label, to }) => (
             <li
               key={label}
-              className="nav-item min-w-[80px] uppercase font-semibold text-xs lg:text-sm"
+              className="nav-item inline-flex items-center justify-center min-w-[80px] uppercase font-semibold text-xs lg:text-sm"
             >
               <Link to={to}>
                 <AnimatedLinkText text={label} />

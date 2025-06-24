@@ -11,7 +11,7 @@ export default function AnimatedLinkText({ text }) {
       className="relative inline-block cursor-pointer overflow-hidden"
     >
       {/* top letters */}
-      <span className="block">
+      <span className="block text-gray-950">
         {text.split("").map((letter, index) => (
           <TextMotion.span
             key={`top-${index}`}
@@ -32,7 +32,7 @@ export default function AnimatedLinkText({ text }) {
       </span>
 
       {/* bottom letters on hover  */}
-      <span className="absolute inset-0 block">
+      <span className="absolute inset-0 block text-gray-950">
         {text.split("").map((letter, index) => (
           <TextMotion.span
             key={`bottom-${index}`}

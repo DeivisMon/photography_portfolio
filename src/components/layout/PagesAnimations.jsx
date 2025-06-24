@@ -41,15 +41,15 @@ export default function PagesAnimations({children}) {
   };
 
   return (
-    <div className="bg-gray-900">
+    <div className="bg-gray-900 ">
       <Motion.div
         {...Animate(slide)}
-        className="fixed top-0 left-0 bg-white no-repeat bg-no-repeat bg-size-[1200px_800px] bg-bottom min-w-full min-h-full">
+        className="fixed top-0 left-0 bg-white min-w-full min-h-full">
       </Motion.div>
       <Motion.div {...Animate(zoomOut)} className="relative">
         <Motion.div
           {...Animate(oppacity)}
-          className="relative flex items-center justify-center bg-white bg-no-repeat bg-size-[2000px_600px] norepeat bg-bottom "
+          className="relative flex items-center justify-center bg-white"
           style={{ minHeight: "calc(100vh - 60px)" }}
         >
           {children}
