@@ -54,7 +54,7 @@ export default function Header() {
   return (
     <div ref={containerRef} className="backdrop-blur-[2px] bg-white">
       <header className="flex justify-between px-8 py-8 lg:px-20">
-        <div className="name flex-1 text-black font-semibold text-lg lg:text-2xl py-8 tracking-wider uppercase pointer-events-none">
+        <div className="name flex-2 text-black font-semibold text-lg lg:text-2xl py-8 tracking-wider uppercase pointer-events-none">
           Darius Žvinklys
         </div>
         <ul className="nav-list flex justify-center flex-1 space-x-6"
@@ -75,7 +75,7 @@ export default function Header() {
             </li>
           ))}
         </ul>
-        <div className="flex justify-end flex-1">
+        <div className="flex justify-end flex-2">
           <SocialIcons /> 
         </div>
       </header>

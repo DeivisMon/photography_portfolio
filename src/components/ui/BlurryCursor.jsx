@@ -104,7 +104,7 @@ export default function BlurryCursor() {
         height: defaultSize,
         borderRadius: "999px",
         backgroundColor: "rgba(255, 255, 255, 0)",
-        border: "1px solid white",
+        border: "2px solid white",
         mixBlendMode: "difference", 
         willChange: "transform, width, height, border-radius, background-color",
       }}
