@@ -13,5 +13,6 @@ html {
 }
 
 ::selection {
-  background: none;
+  background: black;
+  color: white;
 }

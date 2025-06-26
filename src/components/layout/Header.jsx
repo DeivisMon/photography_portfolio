@@ -15,7 +15,7 @@ export default function Header() {
       const tl = gsap.timeline();
 
       tl.from(".name", {
-        xPercent: -100,
+        xPercent: -50,
         opacity: 0,
         duration: 0.6,
         ease: "back.out(1)",
@@ -35,18 +35,30 @@ export default function Header() {
       tl.from(
         ".nav-item",
         {
-          xPercent: -100,
+          yPercent: -100,
           opacity: 0,
           delay: 0.2,
           duration: 0.6,
           ease: "back.out(1)",
           stagger: {
-            amount: 0.2,
+            amount: 0.3,
             from: "left",
           },
         },
-        "<+=0.5"
+        "<+=0.4"
       );
+
+      tl.from(
+        ".photography",
+        {
+          xPercent: -10,
+          opacity: 0,
+          duration: 0.6,
+          ease: "back.out(1)",
+        },
+        "<+=0.2"
+      );
+
     },
     { scope: containerRef }
   );
@@ -54,8 +66,8 @@ export default function Header() {
   return (
     <div ref={containerRef} className="backdrop-blur-[2px] bg-white">
       <header className="flex justify-between px-8 py-8 lg:px-20">
-        <div className="name flex-2 text-black font-semibold text-lg lg:text-2xl py-8 tracking-wider uppercase pointer-events-none">
-          Darius Žvinklys
+        <div className="name flex-2 font-semibold py-8 tracking-wider uppercase pointer-events-none">
+          <span className="text-lg lg:text-2xl font-medium">Darius Žvinklys</span> <span className="text-lg lg:text-2xl font-medium">|</span> <div className="photography inline-block text-gray-800 text-2xl font-light">Photography</div>
         </div>
         <ul className="nav-list flex justify-center flex-1 space-x-6"
             data-cursor-target

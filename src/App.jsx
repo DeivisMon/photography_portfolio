@@ -7,6 +7,7 @@ import Header from "./components/layout/Header";
 import Home from "./pages/Home";
 import Work from "./pages/Work";
 import Contact from "./pages/Contact";
+import Footer from "./components/layout/Footer";
 import BlurryCursor from "./components/ui/BlurryCursor";
 
 function AnimatedPages() {
@@ -30,6 +31,7 @@ function AnimatedPages() {
               <Route path="/contact" element={<Contact />} />
             </Routes>
           </AnimatePresence>
+          <Footer />
         </>
       )}
     </>

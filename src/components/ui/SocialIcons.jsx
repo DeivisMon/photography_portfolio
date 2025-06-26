@@ -36,14 +36,14 @@ export default function SocialIcons() {
       variants={containerVariants}
       initial="hidden"
       animate="show"
-      className="social-icons flex gap-4 "
+      className="social-icons flex"
     >
       {icons.map(({ id, icon, label }) => (
         <Motion.div
           key={id}
           variants={iconVariants}
-          whileHover={{ scale: 1.2 }}
-          style={{ fontSize: 24, cursor: "pointer" }}
+          whileHover={{ scale: 1.2, transition: { duration: 0.3, ease: "easeInOut" } }}
+          style={{ fontSize: 20, cursor: "pointer", padding: "0 10px" }}
           aria-label={label}
         >
           {icon}

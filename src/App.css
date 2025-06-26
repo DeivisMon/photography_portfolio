@@ -52,19 +52,6 @@ header ul li {
   height: 100vh;
 }
 
-/* .nav-item {
-  min-width: 80px;
-  min-height: 40px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-} */
-
-.slider-heading h1, .slider-heading span {
-  /* font-family: "Montserrat", sans-serif; */
-  font-weight: 400;
-}
-
 @media (min-width: 1024px) {
 
   header {

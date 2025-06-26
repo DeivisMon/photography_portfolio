@@ -10,160 +10,150 @@ export default function Loader({ onComplete }) {
   const slidingTextLeftRef = useRef(null);
   const slidingTextRightRef = useRef(null);
   const lineRef = useRef(null);
+  const wipeContainerRef = useRef(null);
 
   useGSAP(
     () => {
-      const tl = gsap.timeline({
-        onComplete: () => {
-          onComplete?.();
-        },
-      });
+      const mainTL = gsap.timeline();
 
-      tl.from(slidingTextLeftRef.current, {
+      mainTL.from(slidingTextLeftRef.current, {
         opacity: 0,
         xPercent: -100,
-        delay: 0.5,
         duration: 0.8,
-        ease: "power1.out",
-        yoyo: true,
+        delay: 0.3,
       });
 
-      tl.from(lineRef.current, {
+      mainTL.from(lineRef.current, {
         opacity: 0,
         yPercent: 100,
-        delay: 0.2,
-        // repeatDelay: 0.5,
-        duration: 0.5,
-        ease: "power1.out",
+        duration: 0.4,
       });
 
-      tl.from(slidingTextRightRef.current, {
+      mainTL.from(
+        slidingTextRightRef.current,
+        {
           xPercent: 100,
           duration: 0.7,
-          ease: "power1.out",
           opacity: 0,
         },
         "<"
       );
 
-      tl.to(slidingTextRightRef.current, {
-        xPercent: 0,
-        duration: 0.5,
-        ease: "power1.out",
-        opacity: 1,
-      });
+      mainTL.to(lineRef.current, { x: 13, duration: 0.3 });
+      mainTL.to(lineRef.current, { x: -13, duration: 0.2 });
 
-      tl.to(lineRef.current, {
-        x: 13,
-        duration: 0.5,
-        ease: "power1.out",
-      });
-
-      tl.to(lineRef.current, {
-        x: -13,
-        duration: 0.3,
-        ease: "power1.out",
-      });
-
-      tl.to(slidingTextLeftRef.current, {
+      mainTL.to(slidingTextLeftRef.current, {
         opacity: 0,
         xPercent: -100,
-        duration: 1,
-        ease: "power1.out",
-        yoyo: true,
+        duration: 0.5,
       });
 
-      tl.to(slidingTextRightRef.current, {
+      mainTL.to(
+        slidingTextRightRef.current,
+        {
           xPercent: 100,
-          duration: 1,
-          ease: "power1.out",
           opacity: 0,
+          duration: 0.5,
         },
         "<"
       );
 
-      tl.to(lineRef.current, {
+      mainTL.to(
+        lineRef.current,
+        {
           xPercent: -100,
           opacity: 0,
-          duration: 0.8,
-          ease: "expo.out",
+          duration: 0.5,
         },
         "<"
       );
 
-      tl.to(".slider-1", {
-          xPercent: -100,
-          duration: 0.8,
-          // opacity: 0.2,
-          ease: "expo.out",
-        },
-        "<+=0.1"
-      );
+      mainTL.to(".slider-1", {
+        opacity: 0,
+        duration: 0,
+        ease: "expo.out",
+      });
 
-      tl.to(".slider-2", {
-          xPercent: -100,
-          duration: 0.8,
-          // opacity: 0.3,
-          ease: "power1.out",
-        },
-        "<+=0.2"
-      );
+      mainTL.set(wipeContainerRef.current, { autoAlpha: 1 }, "<");
 
-      tl.to(".slider-3", {
-          xPercent: -100,
-          duration: 0.8,
-          // opacity: 0.4,
-          ease: "power1.out",
-        },
-        "<+=0.3"
-      );
+      mainTL.call(() => {
+        const bars = gsap.utils
+          .toArray(wipeContainerRef.current.children)
+          .reverse();
 
-      tl.to(".slider-4", {
-          xPercent: -100,
-          duration: 0.6,
-          // opacity: 0.8,
-          ease: "power1.out",
-        },
-        "<+=0.4"
-      );
+        gsap.set(wipeContainerRef.current, { autoAlpha: 1 });
+
+        const wipeTL = gsap.timeline({
+          onComplete: () => {
+            gsap.set(wipeContainerRef.current, { autoAlpha: 0 });
+            onComplete?.();
+          },
+        });
+
+        bars.forEach((bar, i) => {
+          wipeTL.to(
+            bar,
+            {
+              scaleX: 0,
+              duration: 0.2 + i * 0.1,
+              opacity: 0.5,
+              ease: "power2.inOut",
+            },
+            i * 0.05
+          );
+        });
+      });
     },
     { scope: containerRef }
   );
 
   return (
-    <div
-      ref={containerRef}
-      className="relative h-screen overflow-hidden leading-relaxed"
-    >
-      <div className="slider-4 absolute w-full h-screen bg-gray-900"></div>
-      <div className="slider-3 absolute w-full h-screen bg-gray-850"></div>
-      <div className="slider-2 absolute w-full h-screen bg-gray-900"></div>
-      <div className="slider-1 absolute w-full h-screen bg-black">
+    <div ref={containerRef} className="relative h-screen overflow-hidden">
+      {/* Main Slider */}
+      <div className="slider-1 absolute w-full h-screen bg-black z-20">
         <div className="slider-heading flex flex-col items-center justify-end absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <div className="backdrop-blur-[1px] flex gap-2">
             <h1
               ref={slidingTextLeftRef}
-              className="text-white text-5xl font-black uppercase"
+              className="text-white text-5xl font-black font-light"
             >
-              Darius Žvinklys
+              DARIUS ŽVINKLYS
             </h1>
             <span
               ref={lineRef}
-              className="text-white text-5xl font-black"
+              className="text-white text-5xl font-black font-light"
             >
               |
             </span>
             <span
               ref={slidingTextRightRef}
-              className="text-gray-700 text-5xl font-black uppercase"
+              className="text-gray-700 text-5xl font-black font-light"
             >
-              Photography
+              PHOTOGRAPHY
             </span>
           </div>
           <div className="absolute top-1/2 h-[500px] w-[500px] transform -translate-y-1/2 -z-10 opacity-20">
             <SvgCamera />
           </div>
         </div>
+      </div>
+
+      {/* Wipe screen */}
+      <div
+        ref={wipeContainerRef}
+        className="fixed inset-0 z-50 pointer-events-none flex"
+        style={{ opacity: 0 }}
+      >
+        {Array.from({ length: 12 }).map((_, i) => (
+          <div
+            key={i}
+            className="h-full bg-black"
+            style={{
+              width: "8.33%",
+              transformOrigin: "left",
+            }}
+          />
+        ))}
       </div>
     </div>
   );
