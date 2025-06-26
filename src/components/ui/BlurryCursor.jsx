@@ -31,7 +31,7 @@ export default function BlurryCursor() {
 
     hoverTween = gsap.to(cursor, {
       width: 40,
-      height: bounds.height+8,
+      height: 40,
       borderRadius: "50%",
       // x: bounds.left,
       // y: bounds.top,

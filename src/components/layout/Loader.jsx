@@ -10,6 +10,7 @@ export default function Loader({ onComplete }) {
   const slidingTextLeftRef = useRef(null);
   const slidingTextRightRef = useRef(null);
   const lineRef = useRef(null);
+  const cameraRef = useRef(null);
   const wipeContainerRef = useRef(null);
 
   useGSAP(
@@ -64,6 +65,17 @@ export default function Loader({ onComplete }) {
           xPercent: -100,
           opacity: 0,
           duration: 0.5,
+        },
+        "<"
+      );
+
+      mainTL.to(
+        cameraRef.current,
+        {
+          scale: 3,
+          opacity: 0.01,
+          duration: 0.8,
+          ease: "expo.out",
         },
         "<"
       );
@@ -132,7 +144,10 @@ export default function Loader({ onComplete }) {
               PHOTOGRAPHY
             </span>
           </div>
-          <div className="absolute top-1/2 h-[500px] w-[500px] transform -translate-y-1/2 -z-10 opacity-20">
+          <div
+            ref={cameraRef}
+            className="absolute top-1/2 h-[500px] w-[500px] transform -translate-y-1/2 -z-10 opacity-20"
+          >
             <SvgCamera />
           </div>
         </div>

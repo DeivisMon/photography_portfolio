@@ -229,7 +229,7 @@ function BendableContainer() {
 
 export default function CylindricalBendApp() {
   return (
-    <div style={{ width: '100vw', height: '100vh', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}>
+    <div style={{ width: '100vw', height: '100vh', background: 'white' }}>
       {/* Instructions */}
       <div style={{
         position: 'absolute',

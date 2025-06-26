@@ -64,7 +64,7 @@ export default function Header() {
   );
 
   return (
-    <div ref={containerRef} className="backdrop-blur-[2px] bg-white">
+    <div ref={containerRef} className="fixed top-0 left-0 w-full backdrop-blur-[2px] bg-white z-50">
       <header className="flex justify-between px-8 py-8 lg:px-20">
         <div className="name flex-2 font-semibold py-8 tracking-wider uppercase pointer-events-none">
           <span className="text-lg lg:text-2xl font-medium">Darius Žvinklys</span> <span className="text-lg lg:text-2xl font-medium">|</span> <div className="photography inline-block text-gray-800 text-2xl font-light">Photography</div>

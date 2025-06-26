@@ -1,0 +1,172 @@
+[
+    {
+        "src": "./images/1.jpg",
+        "alt": "Image 1",
+        "projectType": "Renginiai"
+    },
+    {
+        "src": "./images/2.jpg",
+        "alt": "Image 2",
+        "projectType": "Renginiai"
+    },
+    {
+        "src": "./images/3.jpg",
+        "alt": "Image 3",
+        "projectType": "Renginiai"
+    },
+    {
+        "src": "./images/4.jpg",
+        "alt": "Image 4",
+        "projectType": "Renginiai"
+    },
+    {
+        "src": "./images/5.jpg",
+        "alt": "Image 5",
+        "projectType": "Renginiai"
+    },
+    {
+        "src": "./images/6.jpg",
+        "alt": "Image 6",
+        "projectType": "Portretai"
+    },
+    {
+        "src": "./images/7.jpg",
+        "alt": "Image 7",
+        "projectType": "Portretai"
+    },
+    {
+        "src": "./images/8.jpg",
+        "alt": "Image 8",
+        "projectType": "Portretai"
+    },
+    {
+        "src": "./images/9.jpg",
+        "alt": "Image 9",
+        "projectType": "Portretai"
+    },
+    {
+        "src": "./images/10.jpg",
+        "alt": "Image 10",
+        "projectType": "Portretai"
+    },
+    {
+        "src": "./images/11.jpg",
+        "alt": "Image 11",
+        "projectType": "Diskotekos"
+    },
+    {
+        "src": "./images/12.jpg",
+        "alt": "Image 12",
+        "projectType": "Diskotekos"
+    },
+    {
+        "src": "./images/13.jpg",
+        "alt": "Image 13",
+        "projectType": "Diskotekos"
+    },
+    {
+        "src": "./images/14.jpg",
+        "alt": "Image 14",
+        "projectType": "Diskotekos"
+    },
+    {
+        "src": "./images/15.jpg",
+        "alt": "Image 15",
+        "projectType": "Diskotekos"
+    },
+    {
+        "src": "./images/16.jpg",
+        "alt": "Image 16",
+        "projectType": "Veiksmas"
+    },
+    {
+        "src": "./images/17.jpg",
+        "alt": "Image 17",
+        "projectType": "Veiksmas"
+    },
+    {
+        "src": "./images/18.jpg",
+        "alt": "Image 18",
+        "projectType": "Veiksmas"
+    },
+    {
+        "src": "./images/19.jpg",
+        "alt": "Image 19",
+        "projectType": "Veiksmas"
+    },
+    {
+        "src": "./images/20.jpg",
+        "alt": "Image 20",
+        "projectType": "Veiksmas"
+    },
+    {
+        "src": "./images/21.jpg",
+        "alt": "Image 21",
+        "projectType": "Koncertai"
+    },
+    {
+        "src": "./images/22.jpg",
+        "alt": "Image 22",
+        "projectType": "Koncertai"
+    },
+    {
+        "src": "./images/23.jpg",
+        "alt": "Image 23",
+        "projectType": "Koncertai"
+    },
+    {
+        "src": "./images/24.jpg",
+        "alt": "Image 24",
+        "projectType": "Koncertai"
+    },
+    {
+        "src": "./images/25.jpg",
+        "alt": "Image 25",
+        "projectType": "Koncertai"
+    },
+    {
+        "src": "./images/26.jpg",
+        "alt": "Image 26",
+        "projectType": "Koncertai"
+    },
+    {
+        "src": "./images/27.jpg",
+        "alt": "Image 27",
+        "projectType": "Veiksmas"
+    },
+    {
+        "src": "./images/28.jpg",
+        "alt": "Image 28",
+        "projectType": "Veiksmas"
+    },
+    {
+        "src": "./images/29.jpg",
+        "alt": "Image 29",
+        "projectType": "Renginiai"
+    },
+    {
+        "src": "./images/30.jpg",
+        "alt": "Image 30",
+        "projectType": "Koncertai"
+    },
+    {
+        "src": "./images/31.jpg",
+        "alt": "Image 31",
+        "projectType": "Portretai"
+    },
+    {
+        "src": "./images/32.jpg",
+        "alt": "Image 32",
+        "projectType": "Portretai"
+    },
+    {
+        "src": "./images/33.jpg",
+        "alt": "Image 33",
+        "projectType": "Veiksmas"
+    },
+    {
+        "src": "./images/34.jpg",
+        "alt": "Image 34",
+        "projectType": "Koncertai"
+    }
+]

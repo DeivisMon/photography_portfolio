@@ -24,27 +24,6 @@ header ul li {
   /* font-family: 'Montserrat', sans-serif; */
 }
 
-.slider-2 {
-  background-color: #0f0f0f;
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-}
-
-.slider-3 {
-  background-color: #111111;
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-}
-
-.slider-4 {
-  background-color: #131313;
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-}
-
 .slider-1 {
   background-color: black;
   position: absolute;
@@ -58,9 +37,4 @@ header ul li {
     padding: 14px 50px;
   }
 
-
-  /* header > div {
-    font-family: "Montserrat", sans-serif;
-  } */
-  
 }

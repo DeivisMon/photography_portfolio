@@ -1,15 +1,17 @@
 import PagesAnimations from "../components/layout/PagesAnimations";
-import WarpingScrollContainer from "../components/ui/PageWarp";
-import CylindricalBendApp from "../components/ui/PageWarp1";
+import WorkGallery from "../components/WorkGallery";
+import { motion as Motion } from "framer-motion";
 
 export default function Work() {
   return (
     <PagesAnimations>
-        <div>
-          {/* <img src="https://images.unsplash.com/photo-1750438146421-6159ae840342?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
-          {/* <WarpingScrollContainer /> */}
-          <CylindricalBendApp />
-        </div>
+      <Motion.div
+        initial={{ opacity: 0, y: -100 }}
+        animate={{ opacity: 1, y: 0, transition: { duration: 0.3 } }}
+        exit={{ opacity: 1, y: -50, transition: { duration: 0.8 } }}
+      >
+        <WorkGallery />
+      </Motion.div>
     </PagesAnimations>
-  )
+  );
 }

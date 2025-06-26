@@ -21,7 +21,7 @@ export default function ContactFrom() {
     <Motion.div
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0, transition: { duration: 0.3 } }}
-      exit={{ opacity: 0, y: -50, transition: { duration: 0.3 } }}
+      exit={{ opacity: 1, y: -50, transition: { duration: 0.8 } }}
       className="relative w-full sm:w-4/5 md:w-5/6 max-w-6xl h-[80vh] md:h-[70vh] overflow-hidden shadow-xl sm:rounded-xl flex flex-col md:flex-row z-100"
     >
       {/* Slankiojantis Image */}
@@ -66,11 +66,14 @@ export default function ContactFrom() {
               placeholder="Your message"
             />
             <button
-              className="bg-blue-200 rounded text-white font-bold py-2 mt-2 hover:bg-blue-300 cursor-pointer"
+              className="bg-gray-400 group rounded-xs text-white font-bold mt-2 hover:bg-gray-300 cursor-pointer transition duration-300 ease-in-out"
               type="button"
+              style={{padding: '8px 0'}}
               onClick={() => setIsContactVisible(!isContactVisible)}
             >
-              Send
+              <span className="group-hover:text-gray-500 transition duration-300 ease-in-out">
+               Send
+              </span>
             </button>
           </form>
         </div>
