@@ -159,7 +159,7 @@ export default function Loader({ onComplete }) {
         className="fixed inset-0 z-50 pointer-events-none flex"
         style={{ opacity: 0 }}
       >
-        {Array.from({ length: 12 }).map((_, i) => (
+        {Array.from({ length: 20 }).map((_, i) => (
           <div
             key={i}
             className="h-full bg-black"

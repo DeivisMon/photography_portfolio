@@ -15,7 +15,7 @@ export default function Header() {
       const tl = gsap.timeline();
 
       tl.from(".name", {
-        xPercent: -50,
+        yPercent: -200,
         opacity: 0,
         duration: 0.6,
         ease: "back.out(1)",
@@ -51,7 +51,7 @@ export default function Header() {
       tl.from(
         ".photography",
         {
-          xPercent: -10,
+          yPercent: -100,
           opacity: 0,
           duration: 0.6,
           ease: "back.out(1)",
