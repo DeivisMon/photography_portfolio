@@ -6,6 +6,8 @@ export function useImageHover(cursorRef, defaultSize = 12) {
     const cursor = cursorRef.current;
     if (!cursor) return;
 
+    let hoverTween = null;
+
     const span = cursor.querySelector(".cursor-text");
 
     const bind = () => {
@@ -13,7 +15,8 @@ export function useImageHover(cursorRef, defaultSize = 12) {
 
       images.forEach((image) => {
         const enter = () => {
-          gsap.to(cursor, {
+          if (hoverTween) hoverTween.kill();
+          hoverTween = gsap.to(cursor, {
             width: 50,
             height: 50,
             backgroundColor: "white",
@@ -31,7 +34,8 @@ export function useImageHover(cursorRef, defaultSize = 12) {
         };
 
         const leave = () => {
-          gsap.to(cursor, {
+          if (hoverTween) hoverTween.kill();
+          hoverTween = gsap.to(cursor, {
             width: defaultSize,
             height: defaultSize,
             backgroundColor: "rgba(255, 255, 255, 0)",
@@ -43,7 +47,7 @@ export function useImageHover(cursorRef, defaultSize = 12) {
             duration: 0.2,
             ease: "power2.in",
             onStart: () => {
-              if (span) gsap.to(span, { opacity: 0, duration: 0.2 });
+              if (span) gsap.to(span, { opacity: 0, duration: 0.05 });
             },
           });
         };
