@@ -31,10 +31,10 @@ export default function BlurryCursor() {
           opacity: 0,
           transition: "opacity 0.2s ease",
           color: "black",
-          fontSize: "12px",
+          fontSize: "1.8rem",
         }}
       >
-        View
+        +
       </span>
     </div>
   );
