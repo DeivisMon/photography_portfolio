@@ -24,7 +24,7 @@ export function useImageHover(cursorRef, defaultSize = 12) {
             borderRadius: "50%",
             filter: "none",
             backdropFilter: "none",
-            mixBlendMode: "normal",
+            mixBlendMode: "difference",
             duration: 0.3,
             ease: "power2.out",
             onStart: () => {

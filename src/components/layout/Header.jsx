@@ -117,18 +117,14 @@ export default function Header() {
 
           {navItems.map(({ label, to }) => (
             <li
-              key={label}
-              ref={(el) => (navItemRefs.current[to] = el)}
-              className={`nav-item inline-flex items-center justify-center min-w-[80px] uppercase font-semibold text-xs lg:text-sm relative pb-1 cursor-pointer`}
-              // onMouseEnter={() => setHoveredTab(to)}
-              onClick={() => {
-                setActiveTab(to);
-              }}
-            >
-              <Link to={to}>
-                <AnimatedLinkText text={label} />
-              </Link>
-            </li>
+  key={label}
+  ref={(el) => (navItemRefs.current[to] = el)}
+  className={`nav-item inline-flex items-center justify-center min-w-[80px] uppercase font-semibold text-xs lg:text-sm relative pb-1 cursor-pointer`}
+>
+  <Link to={to}>
+    <AnimatedLinkText text={label} />
+  </Link>
+</li>
           ))}
         </ul>
 
