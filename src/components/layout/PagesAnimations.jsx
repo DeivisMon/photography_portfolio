@@ -24,7 +24,7 @@ export default function PagesAnimations({ children }) {
     animate: { y: "100vh" },
     exit: {
       y: 60,
-      transition: { duration: 0.8, delay: 0.1, ease: [0.69, -0.3, 0.69, 0.8] },
+      transition: { duration: 1, delay: 0.01, ease: [0.69, -0.3, 0.69, 0.8] },
     },
   };
 
@@ -32,10 +32,10 @@ export default function PagesAnimations({ children }) {
     initial: { y: 0, scale: 1, opacity: 1 },
     animate: { y: 0, scale: 1, opacity: 1 },
     exit: {
-      y: -50,
-      scale: 0.8,
+      y: -100,
+      scale: 0.7,
       opacity: 0.8,
-      transition: { duration: 1, ease: [0.69, -0.3, 0.69, 0.8] },
+      transition: { duration: 1.2, ease: [0.69, -0.35, 0.69, 0.8] },
     },
   };
 

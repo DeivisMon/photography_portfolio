@@ -53,16 +53,16 @@ export default function ContactFrom() {
           <form className="flex flex-col lg:gap-2 w-full max-w-sm">
             <h2 className="text-2xl font-bold lg:mb-4 text-center">Contact Me</h2>
             <input
-              className="p-2 border-b rounded-t-md focus:border-indigo-200 focus:outline-none focus:bg-gray-200"
+              className="p-2 border-b shadow-md rounded-t-md focus:border-indigo-200 focus:outline-none focus:bg-gray-200"
               placeholder="Name"
             />
             <input
-              className="p-2 border-b rounded-t-md focus:border-indigo-200 focus:outline-none focus:bg-gray-200"
+              className="p-2 border-b shadow-md rounded-t-md focus:border-indigo-200 focus:outline-none focus:bg-gray-200"
               type="email"
               placeholder="Email"
             />
             <textarea
-              className="p-2 border-b rounded-t-md focus:border-indigo-600 focus:outline-none focus:bg-gray-200"
+              className="p-2 border-b shadow-md rounded-t-md focus:border-indigo-600 focus:outline-none focus:bg-gray-200"
               placeholder="Your message"
             />
             <button

@@ -10,7 +10,7 @@ export default function Work() {
         animate={{ opacity: 1, y: 0, transition: { duration: 0.3 } }}
         exit={{ opacity: 1, y: -50, transition: { duration: 0.8 } }}
       >
-        <WorkGallery />
+        <img src="/images/4.jpg" alt="" />
       </Motion.div>
     </PagesAnimations>
   );

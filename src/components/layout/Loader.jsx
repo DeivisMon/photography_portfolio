@@ -74,7 +74,7 @@ export default function Loader({ onComplete }) {
         {
           scale: 3,
           opacity: 0.01,
-          duration: 0.8,
+          duration: 0.5,
           ease: "expo.out",
         },
         "<"
@@ -107,7 +107,7 @@ export default function Loader({ onComplete }) {
             bar,
             {
               scaleX: 0,
-              duration: 0.2 + i * 0.1,
+              duration: 0.2 + i * 0.075,
               opacity: 0.5,
               ease: "power2.inOut",
             },
@@ -164,7 +164,7 @@ export default function Loader({ onComplete }) {
             key={i}
             className="h-full bg-black"
             style={{
-              width: "8.33%",
+              flex: 1,
               transformOrigin: "left",
             }}
           />

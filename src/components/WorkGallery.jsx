@@ -172,7 +172,7 @@ export default function WorkGallery() {
           </div>
         </h2>
       </div>
-
+      <div className="text-black">555</div>
       {/* Projects */}
       <div className="grid grid-cols-[200px_minmax(900px,_1fr)_100px] gap-4">
         <div className="flex flex-col items-center gap-[20em]"
@@ -259,6 +259,7 @@ export default function WorkGallery() {
           />
         </motion.div>
       </div>
+      <div className="bg-gray-800 absolute bottom-0 z-[100] w-full h-[350px]">ass</div>  
     </>
   );
 }
