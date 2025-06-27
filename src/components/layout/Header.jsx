@@ -72,7 +72,7 @@ export default function Header() {
         left: offsetLeft + 5,
         width: offsetWidth - 10,
         duration: 0.2,
-        ease: "elastic.out(1, 0.4)",
+        ease: "expo.out",
       });
     }
   };

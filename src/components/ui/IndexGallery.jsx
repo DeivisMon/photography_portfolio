@@ -11,7 +11,7 @@ export default function IndexGallery() {
       {images?.slice(5, 12).map((image, i) => (
         <Motion.div
           key={i}
-          className="image-hover relative flex items-start justify-center overflow-hidden cursor-pointer hover:-skew-y-12 transition-all duration-500 ease-in-out"
+          className="image-hover group relative flex items-start justify-center overflow-hidden cursor-pointer hover:-skew-y-12 transition-all duration-500 ease-in-out"
           initial={{ opacity: 0, y: 10 }}
           animate={{
             opacity: 1,
@@ -31,7 +31,12 @@ export default function IndexGallery() {
             }}
             style={{ transformOrigin: "right" }}
           />
-          <span style={{ marginLeft: "0.3rem", marginTop: "-0.2rem" }}>{`[${i + 1}]`}</span>
+          {/* <GlitchScene imageUrl={image.src} /> */}
+          <div style={{   }}>{`[${i + 1}]`}</div>
+          <div className="opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out">
+            <div>Kategorija:</div>
+            <span>{image.projectType}</span>
+          </div>
           <Motion.div
             initial={{ scaleY: 1 }}
             animate={{ scaleY: 0 }}

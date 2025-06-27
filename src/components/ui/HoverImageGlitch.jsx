@@ -86,8 +86,8 @@ export const GlitchImage = ({ imageUrl, containerSize }) => {
 export const GlitchScene = ({ imageUrl }) => {
   const containerRef = useRef();
   const [containerSize, setContainerSize] = useState({
-    width: 300,
-    height: 300,
+    width: 500,
+    height: 500,
   });
 
   useEffect(() => {
@@ -105,13 +105,13 @@ export const GlitchScene = ({ imageUrl }) => {
   return (
     <div
       ref={containerRef}
-      className="relative w-full max-w-[300px] aspect-[4/3] overflow-hidden"
+      className="relative w-full max-w-[400px] aspect-[4/3] overflow-hidden"
     >
       {/* <Suspense fallback={null}> */}
         <Canvas
           className="absolute inset-0"
           orthographic
-          camera={{ position: [0, 0, 5], zoom: 100 }}
+          camera={{ position: [0, 0, 7], zoom: 100 }}
         >
           <Preload all />
           <ambientLight intensity={0.5} />
