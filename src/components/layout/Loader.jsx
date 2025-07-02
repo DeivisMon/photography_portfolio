@@ -107,11 +107,11 @@ export default function Loader({ onComplete }) {
             bar,
             {
               scaleX: 0,
-              duration: 0.2 + i * 0.075,
+              duration: 0.2 + i * 0.05,
               opacity: 0.5,
               ease: "power2.inOut",
             },
-            i * 0.035
+            i * 0.025
           );
         });
       });
