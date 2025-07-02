@@ -21,48 +21,62 @@ export default function Header() {
     { label: "Contact", to: "/contact" },
   ];
 
-  useGSAP(() => {
-    const tl = gsap.timeline();
+  useGSAP(
+    () => {
+      const tl = gsap.timeline();
 
-    tl.from(".name", {
-      yPercent: -200,
-      opacity: 0,
-      duration: 0.6,
-      ease: "back.out(1)",
-    });
+      tl.from(".name", {
+        yPercent: -200,
+        opacity: 0,
+        duration: 0.6,
+        ease: "back.out(1)",
+      });
 
-    tl.from(".nav-list", {
-      yPercent: 100,
-      opacity: 0,
-      duration: 0.6,
-      ease: "back.out(1)",
-    }, "<");
+      tl.from(
+        ".nav-list",
+        {
+          yPercent: 100,
+          opacity: 0,
+          duration: 0.6,
+          ease: "back.out(1)",
+        },
+        "<"
+      );
 
-    tl.from(".nav-item", {
-      yPercent: -100,
-      opacity: 0,
-      delay: 0.2,
-      duration: 0.6,
-      ease: "back.out(1)",
-      stagger: {
-        amount: 0.3,
-        from: "left",
-      },
-    }, "<+=0.4");
+      tl.from(
+        ".nav-item",
+        {
+          yPercent: -100,
+          opacity: 0,
+          delay: 0.2,
+          duration: 0.6,
+          ease: "back.out(1)",
+          stagger: {
+            amount: 0.3,
+            from: "left",
+          },
+        },
+        "<+=0.4"
+      );
 
-    tl.from(".photography", {
-      yPercent: -100,
-      opacity: 0,
-      duration: 0.6,
-      ease: "back.out(1)",
-    }, "<+=0.2");
-  }, { scope: containerRef });
+      tl.from(
+        ".photography",
+        {
+          yPercent: -100,
+          opacity: 0,
+          duration: 0.6,
+          ease: "back.out(1)",
+        },
+        "<+=0.2"
+      );
+    },
+    { scope: containerRef }
+  );
 
   // Update on route change
   useEffect(() => {
     setActiveTab(location.pathname);
   }, [location]);
-
 
   const moveUnderlineTo = (tabPath) => {
     const targetEl = navItemRefs.current[tabPath];
@@ -77,11 +91,9 @@ export default function Header() {
     }
   };
 
-
   useEffect(() => {
     moveUnderlineTo(activeTab);
   }, [activeTab]);
-
 
   // useEffect(() => {
   //   if (hoveredTab) {
@@ -96,7 +108,9 @@ export default function Header() {
     >
       <header className="flex justify-between px-8 py-8 lg:px-20 relative">
         <div className="name flex-2 font-semibold py-8 tracking-wider uppercase pointer-events-none">
-          <span className="text-lg lg:text-2xl font-medium">Darius Žvinklys</span>{" "}
+          <span className="text-lg lg:text-2xl font-medium">
+            Darius Žvinklys
+          </span>{" "}
           <span className="text-lg lg:text-2xl font-medium">|</span>{" "}
           <div className="photography inline-block text-gray-800 text-2xl font-light">
             Photography
@@ -117,14 +131,14 @@ export default function Header() {
 
           {navItems.map(({ label, to }) => (
             <li
-  key={label}
-  ref={(el) => (navItemRefs.current[to] = el)}
-  className={`nav-item inline-flex items-center justify-center min-w-[80px] uppercase font-semibold text-xs lg:text-sm relative pb-1 cursor-pointer`}
->
-  <Link to={to}>
-    <AnimatedLinkText text={label} />
-  </Link>
-</li>
+              key={label}
+              ref={(el) => (navItemRefs.current[to] = el)}
+              className={`nav-item inline-flex items-center justify-center min-w-[80px] uppercase font-semibold text-xs lg:text-sm relative pb-1 cursor-pointer`}
+            >
+              <Link to={to}>
+                <AnimatedLinkText text={label} />
+              </Link>
+            </li>
           ))}
         </ul>
 
