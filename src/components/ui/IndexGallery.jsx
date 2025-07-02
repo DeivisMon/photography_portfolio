@@ -20,7 +20,7 @@ export default function IndexGallery() {
   return (
     <div 
       className="relative max-w-[1800px] flex flex-wrap justify-between items-center items-start gap-x-4 gap-y-16"
-      style={{ marginTop: "100px" }}
+      style={{ marginTop: "100px", marginBottom: "100px" }}
       >
       {displayedImages.map((image, i) => {
         const isSelected = selectedIndex === i;
@@ -47,16 +47,16 @@ export default function IndexGallery() {
                     ? {
                         opacity: 0,
                         scale: 0.5,
-                        transition: { duration: 0.8, ease: [0.69, -0.3, 0.69, 0.8] },
+                        transition: { duration: 0.5, ease: [0.69, -0.3, 0.69, 0.8] },
                       }
                     : {
                         opacity: 1,
                         y: 0,
                         scale: 1,
-                        transition: { duration: 0.8, ease: [0.69, -0.3, 0.69, 0.8] },
+                        transition: { duration: 0.5, ease: [0.69, -0.3, 0.69, 0.8] },
                       }
                 }
-                exit={{ opacity: 0, scale: 0.8 }}
+                exit={{ opacity: 0, scale: 0.5 }}
                 onClick={() => setSelectedIndex(i)}
               >
                 <Motion.img

@@ -118,7 +118,7 @@ export default function Header() {
         </div>
 
         <ul
-          className="nav-list flex justify-center flex-1 space-x-6 relative"
+          className="nav-list flex justify-center flex-1 relative"
           data-cursor-target
           onMouseLeave={() => moveUnderlineTo(activeTab)}
         >
