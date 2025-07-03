@@ -3,10 +3,10 @@ import IndexGallery from "../components/ui/IndexGallery";
 import { motion as Motion } from "framer-motion";
 
 const slide = {
-    // initial: { y: -50 },
-    // animate: { y: 0, transition: { duration: 0.3, ease: [0.69, -0.3, 0.69, 0.8] } },
+    // initial: { y: 50 },
+    // animate: { y: 0, transition: { duration: 0.8, ease: [0.69, -0.3, 0.69, 0.8] } },
     // exit: {
-    //   y: 60,
+    //   y: -50,
     //   transition: { duration: 0.8,  ease: [0.69, -0.3, 0.69, 0.8] },
     // },
   };

@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { motion as Motion, AnimatePresence } from "framer-motion";
+import { motion as Motion, AnimatePresence, easeInOut } from "framer-motion";
 import images from "../../data/images";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { GrClose } from "react-icons/gr";
@@ -79,7 +79,7 @@ export default function IndexGallery() {
         opacity: 1,
         transition: { 
           duration: 0.6, 
-          ease: [0.65, 0, 0.35, 1],
+          ease: easeInOut,
           delay: Math.abs(position.distanceFromCenter) / 6000
         }
       };
@@ -89,8 +89,8 @@ export default function IndexGallery() {
         x: direction * partingDistance,
         opacity: 0,
         transition: { 
-          duration: 0.8, 
-          ease: [0.65, 0, 0.35, 1],
+          duration: 0.5, 
+          ease: easeInOut,
           delay: Math.abs(position.distanceFromCenter) / 6000
         }
       };
@@ -119,7 +119,7 @@ export default function IndexGallery() {
         zIndex: 1000,
         transition: { 
           duration: 0.6, 
-          ease: [0.65, 0, 0.35, 1]
+          ease: easeInOut
         }
       };
     } else if (stage === 'scaling') {
@@ -132,8 +132,8 @@ export default function IndexGallery() {
         zIndex: 1000,
         transition: { 
           duration: 0.6, 
-          ease: [0.65, 0, 0.35, 1],
-          delay: 0.6
+          ease: easeInOut,
+          delay: 0.2
         }
       };
     } else if (stage === 'closing') {
@@ -146,7 +146,7 @@ export default function IndexGallery() {
         zIndex: 1,
         transition: { 
           duration: 0.6, 
-          ease: [0.65, 0, 0.35, 1]
+          ease: easeInOut
         }
       };
     }
@@ -168,11 +168,11 @@ export default function IndexGallery() {
           <Motion.div
             key={i}
             data-image-index={i}
-            className="image-hover group flex items-start justify-center cursor-pointer"
+            className={`${isSelected ? 'no-hover' : "image-hover"}  group flex items-start justify-center cursor-pointer`}
             style={{
               zIndex: isSelected ? 1000 : 1
             }}
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={
               selectedIndex === null 
                 ? { opacity: 1, y: 0, scale: 1, x: 0 }
@@ -180,16 +180,16 @@ export default function IndexGallery() {
                   ? getSelectedImageAnimation(i, isAnimating ? 'closing' : 'scaling')
                   : getPartingAnimation(i, isAnimating)
             }
-            transition={{ 
-              duration: selectedIndex === null ? 0.5 : undefined,
-              ease: [0.65, 0, 0.35, 1] 
-            }}
+            // transition={{ 
+            //   duration: selectedIndex === null ? 0.5 : undefined,
+            //   ease: easeInOut 
+            // }}
             onClick={() => !isSelected && selectedIndex === null && setSelectedIndex(i)}
           >
             <Motion.img
               src={image.src}
               alt={image.src}
-              className="max-w-84 max-h-74 object-contain filter hover:grayscale-75 hover:transform hover:translate-x-2 hover:-skew-y-12 transition-all duration-500 ease-in-out origin-center"
+              className="max-w-84 max-h-74 object-contain filter hover:grayscale-75 hover:-skew-y-12 transition-all duration-500 ease-in-out"
               style={{ 
                 transformOrigin: "right",
                 // filter: isInactive ? 'grayscale(100%)' : 'none'
@@ -238,14 +238,13 @@ export default function IndexGallery() {
                       e.stopPropagation();
                       handleClose();
                     }}
-                    className="absolute top-0 right-8 flex items-center text-white hover:text-red-400 transition-all duration-500 ease-in-out"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.8 }}
-                    transition={{ duration: 0.5, delay: 1.4 }}
+                    className="absolute top-0 right-6 flex items-center text-[0.6rem] text-white hover:text-red-400 transition-all duration-500 ease-in-out"
+                    initial={{ opacity: 0.8, y: -20 }}
+                    animate={{ opacity: 1, y: 0, transition: { duration: 0.3, delay: 0.4 } }}
+                    exit={{ opacity: 0, y: -20, transition: { duration: 0} }}
                   >
                     [<span style={{ marginRight: "0.2rem" }}>close</span>{" "}
-                    <GrClose size={16} />]
+                    <GrClose size={8} />]
                   </Motion.button>
 
                   {/* <Motion.button
