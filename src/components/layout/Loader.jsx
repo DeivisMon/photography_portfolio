@@ -111,7 +111,7 @@ export default function Loader({ onComplete }) {
               opacity: 0.5,
               ease: "power2.inOut",
             },
-            i * 0.025
+            i * -0.015
           );
         });
       });

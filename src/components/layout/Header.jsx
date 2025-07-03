@@ -26,9 +26,10 @@ export default function Header() {
       const tl = gsap.timeline();
 
       tl.from(".name", {
-        yPercent: -200,
+        yPercent: 100,
         opacity: 0,
         duration: 0.6,
+        delay: 0.25,
         ease: "back.out(1)",
       });
 

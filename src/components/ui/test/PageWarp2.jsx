@@ -1,6 +1,6 @@
-import { Canvas, useFrame, useThree } from '@react-three/fiber'
+import { Canvas, useFrame} from '@react-three/fiber'
 import { useScroll, ScrollControls, Scroll } from '@react-three/drei'
-import { useRef, useEffect } from 'react'
+import { useRef } from 'react'
 
 function ImageGrid({ images }) {
   const groupRef = useRef()

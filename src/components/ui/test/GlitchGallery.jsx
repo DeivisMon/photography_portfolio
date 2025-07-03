@@ -3,7 +3,7 @@ import { Canvas, useFrame, extend } from '@react-three/fiber';
 import { useLoader } from '@react-three/fiber';
 import * as THREE from 'three';
 import { TextureLoader } from 'three';
-import { GlitchShader } from '../shaders/GlitchShader';
+import { GlitchShader } from '../../shaders/GlitchShader';
 import images from '../../data/images'; 
 
 // Shader Material

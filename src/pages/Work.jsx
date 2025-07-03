@@ -1,6 +1,7 @@
 import PagesAnimations from "../components/layout/PagesAnimations";
 import WorkGallery from "../components/WorkGallery";
 import { motion as Motion } from "framer-motion";
+import InfiniteScrollScene from "../components/ui/test/scrollImages"; 
 
 export default function Work() {
   return (
@@ -10,7 +11,7 @@ export default function Work() {
         animate={{ opacity: 1, y: 0, transition: { duration: 0.3 } }}
         exit={{ opacity: 1, y: -50, transition: { duration: 0.8 } }}
       >
-        <img src="/images/4.jpg" alt="" />
+        <InfiniteScrollScene />
       </Motion.div>
     </PagesAnimations>
   );

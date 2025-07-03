@@ -21,10 +21,10 @@ const CONFIG = {
   scroll: {
     speed: 0.02,
     maxSpeed: 3,
-    friction: 0.95
+    friction: 0.85  
   },
   bending: {
-    angleRange: Math.PI / 8 // Very small angle
+    angleRange: Math.PI / 12 // Very small angle
   }
 };
 
