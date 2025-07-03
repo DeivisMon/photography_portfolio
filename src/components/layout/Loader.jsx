@@ -109,9 +109,9 @@ export default function Loader({ onComplete }) {
               scaleX: 0,
               duration: 0.2 + i * 0.05,
               opacity: 0.5,
-              ease: "power2.inOut",
+              ease: "power3.inOut",
             },
-            i * -0.015
+            i * -0.01
           );
         });
       });
