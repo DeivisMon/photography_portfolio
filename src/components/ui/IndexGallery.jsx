@@ -25,7 +25,7 @@ export default function IndexGallery() {
   //     (prev - 1 + images.slice(5, 29).length) % images.slice(5, 29).length
   //   );
 
-  const displayedImages = images.slice(5, 29);
+  const displayedImages = images.slice(5, 30);
 
   // Calculate image positions relative to viewport center
   useEffect(() => {
@@ -70,7 +70,7 @@ export default function IndexGallery() {
 
     const direction = position.isLeftSide ? -1 : 1;
     const baseDistance = Math.abs(position.distanceFromCenter);
-    const partingDistance = Math.max(200, baseDistance * 0.5);
+    const partingDistance = Math.max(100, baseDistance * 1);
     
     if (isClosing) {
       // Closing animation - images return from their parted positions
@@ -89,7 +89,7 @@ export default function IndexGallery() {
         x: direction * partingDistance,
         opacity: 0,
         transition: { 
-          duration: 0.5, 
+          duration: 0.6, 
           ease: easeInOut,
           delay: Math.abs(position.distanceFromCenter) / 6000
         }
@@ -152,13 +152,15 @@ export default function IndexGallery() {
     }
   };
 
-  const isSelected = selectedIndex !== null;
-
   return (
-    <div 
+    <Motion.div 
       ref={containerRef}
       className="relative max-w-[1800px] flex flex-wrap justify-between items-center items-start gap-x-4 gap-y-16"
       style={{ marginTop: "100px", marginBottom: "100px" }}
+      initial={{ opacity: 0, scale: 5, y: -200, }}
+      animate={{ opacity: 1, scale: 1, y: 0, }}
+      exit={{ opacity: 0, scale: 0.8, y: -200, }}
+      transition={{ duration: 1, ease: easeInOut }}
     >
       {displayedImages.map((image, i) => {
         const isSelected = selectedIndex === i;
@@ -203,8 +205,14 @@ export default function IndexGallery() {
             />
             
             <div className="flex flex-col items-center">
-              <div className={`${
-                  isSelected ? 'hidden' : 'flex'}`}>[{i + 1}]</div>
+              <Motion.div 
+                className={`${
+                  isSelected ? 'hidden' : 'flex'}`}
+                   initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.4,delay: 1 }}
+                  >[{i + 1}]
+                  </Motion.div>
               <div
                 className={`transition-all duration-500 ease-in-out text-sm ${
                   isSelected ? 'opacity-0' : 'opacity-0 group-hover:opacity-100'
@@ -239,9 +247,9 @@ export default function IndexGallery() {
                       handleClose();
                     }}
                     className="absolute top-0 right-6 flex items-center text-[0.6rem] text-white hover:text-red-400 transition-all duration-500 ease-in-out"
-                    initial={{ opacity: 0.8, y: -20 }}
-                    animate={{ opacity: 1, y: 0, transition: { duration: 0.3, delay: 0.4 } }}
-                    exit={{ opacity: 0, y: -20, transition: { duration: 0} }}
+                    initial={{ y: -20 }}
+                    animate={{ y: 0, transition: { duration: 0.3, delay: 0.4 } }}
+                    exit={{ y: -20, transition: { duration: 0} }}
                   >
                     [<span style={{ marginRight: "0.2rem" }}>close</span>{" "}
                     <GrClose size={8} />]
@@ -280,6 +288,6 @@ export default function IndexGallery() {
           </Motion.div>
         );
       })}
-    </div>
+    </Motion.div>
   );
 }

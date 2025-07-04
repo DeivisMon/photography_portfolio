@@ -172,7 +172,7 @@ export default function WorkGallery() {
           </div>
         </h2>
       </div>
-      <div className="text-black">555</div>
+
       {/* Projects */}
       <div className="grid grid-cols-[200px_minmax(900px,_1fr)_100px] gap-4">
         <div className="flex flex-col items-center gap-[20em]"
@@ -187,7 +187,7 @@ export default function WorkGallery() {
               <div className="flex flex-col gap-4 min-h-screen">
                 {groupedImages[projectName]?.map((img, j) => (
                   <div
-                    className="flex-1 max-w-[300px] min-w-[300px] shadow-md min-h-[300px] shadow-black cursor-pointer hover:scale-103 transition-all duration-300 ease-[cubic-bezier(0.37, 0, 0.63, 1] hover:shadow-xl"
+                    className="flex-1 max-w-[300px] min-w-[300px] min-h-[300px] cursor-pointer hover:scale-103 transition-all duration-300 ease-[cubic-bezier(0.37, 0, 0.63, 1] hover:shadow-xl"
                     key={j}
                   >
                     <img
@@ -254,12 +254,11 @@ export default function WorkGallery() {
             ref={imgRef}
             src={previewSrc}
             alt="Preview"
-            className="max-w-full max-h-full object-contain shadow-md shadow-black"
+            className="max-w-full max-h-full object-contain"
             onLoad={handleImageLoad}
           />
         </motion.div>
       </div>
-      <div className="bg-gray-800 absolute bottom-0 z-[100] w-full h-[350px]">ass</div>  
     </>
   );
 }
