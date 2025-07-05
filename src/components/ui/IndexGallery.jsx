@@ -3,6 +3,7 @@ import { motion as Motion, AnimatePresence, easeInOut } from "framer-motion";
 import images from "../../data/images";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { GrClose } from "react-icons/gr";
+const formatSrc = (src) => `/photography_portfolio${src.replace('./', '/')}`;
 
 export default function IndexGallery() {
   const [selectedIndex, setSelectedIndex] = useState(null);
@@ -189,7 +190,7 @@ export default function IndexGallery() {
             onClick={() => !isSelected && selectedIndex === null && setSelectedIndex(i)}
           >
             <Motion.img
-              src={image.src}
+              src={formatSrc(image.src)}
               alt={image.src}
               className="max-w-84 max-h-74 object-contain filter hover:grayscale-75 hover:-skew-y-12 transition-all duration-500 ease-in-out"
               style={{ 

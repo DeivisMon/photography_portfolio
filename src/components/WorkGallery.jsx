@@ -5,6 +5,8 @@ import Lenis from "lenis";
 import groupImagesByProject from "../utils/groupImagesByProject";
 import imageData from "../data/images.json";
 import { motion } from "framer-motion";
+const formatSrc = (src) => `/photography_portfolio${src.replace('./', '/')}`;
+
 
 const projects = {
   1: "Renginiai",
@@ -191,7 +193,7 @@ export default function WorkGallery() {
                     key={j}
                   >
                     <img
-                      src={img.src}
+                      src={formatSrc(img.src)}
                       alt={img.name}
                       onClick={() => setPreviewSrc(img.src)}
                       className="w-full h-full object-cover opacity-90"

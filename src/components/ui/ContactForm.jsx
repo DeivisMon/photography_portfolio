@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion as Motion } from "framer-motion";
+const formatSrc = (src) => `/photography_portfolio${src.replace('./', '/')}`;
+
 
 export default function ContactFrom() {
   const [isContactVisible, setIsContactVisible] = useState(true);
@@ -28,7 +30,7 @@ export default function ContactFrom() {
       <div
         className="absolute bg-cover bg-center bg-no-repeat transition-transform delay-300 duration-500 ease-[cubic-bezier(0.5, 0, 0.75, 0)] z-20 w-full h-1/2 md:w-1/2 md:h-full"
         style={{
-          backgroundImage: "url('/images/contact.jpg')",
+          backgroundImage: "url('/photography_portfolio/images/contact.jpg')",
           transform: getTransform(),
         }}
       />
