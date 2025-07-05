@@ -37,7 +37,7 @@ export function useNavHover(cursorRef, defaultSize = 12) {
     };
 
     const bindListeners = () => {
-      const navItems = document.querySelectorAll(".nav-list, .social-icons");
+      const navItems = document.querySelectorAll(".nav-list, .social-icons, .close-btn");
       navItems.forEach((el) => {
         el.addEventListener("mouseenter", handleHover);
         el.addEventListener("mouseleave", handleLeave);

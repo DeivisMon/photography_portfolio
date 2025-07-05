@@ -143,7 +143,7 @@ export default function IndexGallery() {
         y: 0,
         scale: 1,
         opacity: 1,
-        zIndex: 1,
+        zIndex: 1000,
         transition: { 
           duration: 0.6, 
           ease: easeInOut
@@ -155,7 +155,7 @@ export default function IndexGallery() {
   return (
     <Motion.div 
       ref={containerRef}
-      className="relative max-w-[1800px] flex flex-wrap justify-between items-center items-start gap-x-4 gap-y-16"
+      className="relative max-w-[1800px] flex flex-wrap justify-between items-center items-start gap-x-4 gap-y-16 origin-top"
       style={{ marginTop: "100px", marginBottom: "100px" }}
       initial={{ opacity: 0, scale: 5, y: -200, }}
       animate={{ opacity: 1, scale: 1, y: 0, }}
@@ -246,13 +246,13 @@ export default function IndexGallery() {
                       e.stopPropagation();
                       handleClose();
                     }}
-                    className="absolute top-0 right-6 flex items-center text-[0.6rem] text-white hover:text-red-400 transition-all duration-500 ease-in-out"
-                    initial={{ y: -20 }}
-                    animate={{ y: 0, transition: { duration: 0.3, delay: 0.4 } }}
-                    exit={{ y: -20, transition: { duration: 0} }}
+                    className="close-btn absolute top-0 -right-6 flex items-center text-[0.5rem] text-black hover:text-red-400 transition-all duration-500 ease-in-out -z-1"
+                    initial={{ x: -50, }}
+                    animate={{ x: 0,  transition: { duration: 0.3, delay: 0.5 } }}
+                    exit={{ x: -50,  transition: { duration: 0} }}
                   >
                     [<span style={{ marginRight: "0.2rem" }}>close</span>{" "}
-                    <GrClose size={8} />]
+                    <GrClose size={5} />]
                   </Motion.button>
 
                   {/* <Motion.button
