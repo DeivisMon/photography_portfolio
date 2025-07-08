@@ -4,7 +4,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 import groupImagesByProject from "../utils/groupImagesByProject";
 import imageData from "../data/images.json";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 const formatSrc = (src) => `/photography_portfolio${src.replace('./', '/')}`;
 
 
@@ -242,7 +242,7 @@ export default function WorkGallery() {
           ))}
         </div>
 
-        <motion.div
+        <Motion.div
           className="fixed bottom-16 right-8 flex justify-center items-center opacity-95 "
           style={{
             width: computedWidth,
@@ -259,7 +259,7 @@ export default function WorkGallery() {
             className="max-w-full max-h-full object-contain"
             onLoad={handleImageLoad}
           />
-        </motion.div>
+        </Motion.div>
       </div>
     </>
   );

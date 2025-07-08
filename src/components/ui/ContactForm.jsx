@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { motion as Motion } from "framer-motion";
-const formatSrc = (src) => `/photography_portfolio${src.replace('./', '/')}`;
 
 
 export default function ContactFrom() {
